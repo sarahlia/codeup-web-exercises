@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>American Airlines</title>
+	</head>
+
+	<body>
+		<h3>Book</h3>
+
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<p>
+				<label for="type_of_travel_booked">Flight</label>
+					<input type="radio" id="type_of_travel_booked" name="type_of_travel_booked">
+
+				<label>
+					<input type="radio" name="type_of_travel_booked" value="vacation packages">Vacation packages
+				</label>
+				<label>
+					<input type="radio" name="type_of_travel_booked" value="hotel">Hotel
+				</label>
+				<label>
+					<input type="radio" name="type_of_travel_booked" value="car">Car
+				</label>
+			</p>
+
+			<p>
+				<label>
+					<input type="radio" name="flight_sector" value="round trip">Round trip
+				</label>
+				<label>
+					<input type="radio" name="flight_sector" value="one way">One way
+				</label>
+				<label>
+					<input type="checkbox" name="redeem_miles" value="true">Redeem miles
+				</label>
+			</p>
+			<br>
+			<p>
+				<h3>From</h3>
+				<select name="airport">
+					<option value="dfw">DFW</option>
+					<option value="dal">DAL</option>
+					<option value="sea">SEA</option>
+					<option value="ord">ORD</option>
+				</select>
+			<br>
+			<br>
+				<h3>To</h3>
+				<select name="airport">
+					<option value="dfw">DFW</option>
+					<option value="dal">DAL</option>
+					<option value="sea">SEA</option>
+					<option value="ord" selected>ORD</option>
+				</select>
+			<br>
+			<br>
+				<h3>Number of passengers</h3>
+				<select name="number">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				</select>
+			<br>
+			<br>
+				<h3>Depart</h3>
+				<input type="date" name="depart_date">
+			<br>
+			<br>
+				<h3>Return</h3>
+				<input type="date" name="return_date">
+			</p>
+		</form>
+	</body>
+</html>
