@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Veridian Dynamics - Registration Page</title>
+	</head>
+
+	<body>
+		<h1>Register With Us</h1>
+
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<p>
+				<label for="email">Email</label>
+				<input id="email" name="email" type="text" placeholder="Enter your email">
+			</p>
+			<p>
+				<label for="password">Password</label>
+				<input id="password" name="password" type="password" placeholder="Enter your password">
+			</p>
+			<p>
+				<label for="bio">Bio</label>
+				<textarea id="bio" name="bio" cols="100" rows="3" maxlength="300" placeholder="Write a brief description about yourself."></textarea>
+			</p>
+			<br>
+			<p>
+				<h3>How did you hear about us?</h3>
+				<label>
+					<input type="radio" name="question1" value="billboard">Billboard<br>
+				</label>
+				<label>
+					<input type="radio" name="question1" value="radio advertisement">Radio Advertisement<br>
+				</label>
+				<label>
+					<input type="radio" name="question1" value="internet advertisement">Internet Advertisement<br>
+				</label>
+				<label>
+					<input type="radio" name="question1" value="other">Other<br>
+				</label>
+			</p>
+			<p>
+				<h3>Select your web browser</h3>
+				<select name="web_browser">
+					<option value=""></option>
+					<option value="chrome">Chrome</option>
+					<option value="safari">Safari</option>
+					<option value="firefox">Firefox</option>
+				</select>
+			</p>
+			<br>
+			<p>
+				<button type="submit">Submit</button>
+			</p>
+		</form>
+
+	</body>
+
+</html>
