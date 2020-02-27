@@ -2,12 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Veridian Dynamics - Registration Page</title>
+		<title>Register With Us</title>
 	</head>
 
 	<body>
-		<h1>Register With Us</h1>
-
 		<form method="POST" action="https://request-inspector.glitch.me/">
 			<p>
 				<label for="email">Email</label>
@@ -19,39 +17,36 @@
 			</p>
 			<p>
 				<label for="bio">Bio</label>
-				<textarea id="bio" name="bio" cols="100" rows="3" maxlength="300" placeholder="Write a brief description about yourself."></textarea>
+				<textarea id="bio" name="bio" cols="50" rows="8" maxlength="300" placeholder="Write a brief description about yourself."></textarea>
 			</p>
 			<br>
 			<p>
 				<h3>How did you hear about us?</h3>
 				<label>
-					<input type="radio" name="question1" value="billboard">Billboard<br>
+					<input type="radio" name="source" value="billboard">Billboard<br>
 				</label>
 				<label>
-					<input type="radio" name="question1" value="radio advertisement">Radio Advertisement<br>
+					<input type="radio" name="source" value="radio advertisement">Radio Advertisement<br>
 				</label>
 				<label>
-					<input type="radio" name="question1" value="internet advertisement">Internet Advertisement<br>
+					<input type="radio" name="source" value="internet advertisement">Internet Advertisement<br>
 				</label>
 				<label>
-					<input type="radio" name="question1" value="other">Other<br>
+					<input type="radio" name="source" value="other">Other<br>
 				</label>
 			</p>
 			<p>
-				<h3>Select your web browser</h3>
-				<select name="web_browser">
+				<br>
+			<!-- If we want to use a label instead of a header: -->
+				<label for="browser">What is your web browser?</label>
+				<select id="browser" name="web_browser">
 					<option value=""></option>
 					<option value="chrome">Chrome</option>
 					<option value="safari">Safari</option>
 					<option value="firefox">Firefox</option>
 				</select>
 			</p>
-			<br>
-			<p>
 				<button type="submit">Submit</button>
-			</p>
 		</form>
-
 	</body>
-
 </html>
