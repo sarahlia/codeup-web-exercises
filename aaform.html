@@ -10,9 +10,9 @@
 
 		<form method="POST" action="https://request-inspector.glitch.me/">
 			<p>
-				<label for="type_of_travel_booked">Flight</label>
-					<input type="radio" id="type_of_travel_booked" name="type_of_travel_booked">
-
+				<label>
+					<input type="radio" name="type_of_travel_booked" value="flight">Flight
+				</label>
 				<label>
 					<input type="radio" name="type_of_travel_booked" value="vacation packages">Vacation packages
 				</label>
@@ -38,21 +38,24 @@
 			<br>
 			<p>
 				<h3>From</h3>
-				<select name="airport">
-					<option value="dfw">DFW</option>
-					<option value="dal">DAL</option>
-					<option value="sea">SEA</option>
-					<option value="ord">ORD</option>
-				</select>
+				<label for="airport">From</label>
+					<select name="airport">
+						<option value="dfw">DFW</option>
+						<option value="dal">DAL</option>
+						<option value="sea">SEA</option>
+						<option value="ord">ORD</option>
+					</select>
 			<br>
 			<br>
 				<h3>To</h3>
+				<label>
 				<select name="airport">
 					<option value="dfw">DFW</option>
 					<option value="dal">DAL</option>
 					<option value="sea">SEA</option>
 					<option value="ord" selected>ORD</option>
 				</select>
+				</label>
 			<br>
 			<br>
 				<h3>Number of passengers</h3>
@@ -72,6 +75,8 @@
 				<h3>Return</h3>
 				<input type="date" name="return_date">
 			</p>
+			<br>
+				<button type="submit">Search</button>
 		</form>
 	</body>
 </html>
