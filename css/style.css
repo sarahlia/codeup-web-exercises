@@ -1,4 +1,47 @@
-.fancy-header {
-    color: purple;
+h1 {
+    text-align: center;
+}
+
+h1, h2 {
+    color: red;
     text-decoration: underline;
 }
+
+body {
+    background-color: yellow;
+}
+
+body {
+    background-image: url(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 40%;
+}
+
+li {
+    list-style: square;
+}
+
+body {
+    font-family: "Comic Sans MS", Helvetica;
+}
+
+table {
+    font-size: 22px;
+    padding-top: 25px;
+    padding-left: 100px;
+}
+
+a:visited {
+    color:pink;
+}
+
+a:hover {
+    color: black;
+    background: orange;
+}
+
+a:active {
+    background: gray;
+}
+
