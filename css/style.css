@@ -1,24 +1,26 @@
-h1 {
+.fancy-header {
     text-align: center;
+    color: brown;
+    text-decoration: underline;
 }
 
-h1, h2 {
-    color: red;
+h2 {
+    color: saddlebrown;
     text-decoration: underline;
 }
 
 body {
-    background-color: yellow;
+    background-color: beige;
 }
 
 body {
-    background-image: url(https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 40%;
+    background-image: url(https://bhf-cdn.azureedge.net/bhf-blob-prod/0023374_briar-beige-damask-wallpaper_600.jpeg);
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: cover;
 }
 
-li {
+ul {
     list-style: square;
 }
 
@@ -26,22 +28,30 @@ body {
     font-family: "Comic Sans MS", Helvetica;
 }
 
-table {
+tr>td {
     font-size: 22px;
     padding-top: 25px;
-    padding-left: 100px;
+    padding-left: 30px;
+}
+
+th {
+    padding-left: 30px;
+}
+
+a:link {
+    color: royalblue;
 }
 
 a:visited {
-    color:pink;
+    color:purple;
 }
 
 a:hover {
     color: black;
-    background: orange;
+    background-color: orange;
 }
 
 a:active {
-    background: gray;
+    background-color: gray;
 }
 
