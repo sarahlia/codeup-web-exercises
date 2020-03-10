@@ -82,6 +82,18 @@ console.log("checkType(1)= " + checkType(1));
 console.log("checkType('Apex')= " + checkType("Apex"));
 console.log("checkType(true)= " + checkType(true));
 
+// Exercise 12
+// Create a function that takes in an array of values and console.logs the data type of each.
+
+	function checkTypes (array) {
+	    for(var x = 0; x < array.length; x++ ) {
+	        // console.log('x: '+x);
+	        console.log(checkType(array[x]));
+		}
+}
+
+	checkTypes([2, 'Fer', false]);
+	checkTypes([10]);
 
 
 
