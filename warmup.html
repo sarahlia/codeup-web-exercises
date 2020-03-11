@@ -95,7 +95,30 @@ console.log("checkType(true)= " + checkType(true));
 	checkTypes([2, 'Fer', false]);
 	checkTypes([10]);
 
+// Exercise 13
 
+	function isString(sth) {
+        return checkType(sth) === "string";
+    }
+	    // var result;
+	    // if typeof(sth) = "string" {
+	    //     result = true;
+		// } else {
+        //     result = false;
+        // }
+	    //     return result;
+
+console.log(isString(true));
+console.log(isString("veggie"));
+
+
+	// Exercise 14
+	function isNumber(aNumber) {
+	    return typeof aNumber === "number";
+	}
+
+	console.log(isNumber(3));
+	console.log(isNumber(true));
 
 </script>
 </body>
