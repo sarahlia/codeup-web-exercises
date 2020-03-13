@@ -130,6 +130,24 @@ console.log(isString("veggie"));
 	}
 
 	console.log(getRandomNumber(3));
+
+	// Exercise 16
+	// Create an array with your classmates in it
+
+	var classmatesArray = ["evelyn", "emily", "jacob", "ramon", "moriah", "tyler", "ry", "valeria", "sung", "esai", "delayne", "nayoung", "roshan", "ron", "rex"];
+
+	console.log(classmatesArray);
+
+
+	// Exercise 17
+	// Create a function that returns a random item from an array
+
+	function getRandomItem(classmatesArray) {
+	    return classmatesArray[Math.floor(Math.random()*classmatesArray.length)];
+	}
+// or: can also do: function getRandomItem(array) { return array[getRandomNumber()]; }
+	console.log(getRandomItem(classmatesArray));
+
 </script>
 </body>
 </html>
