@@ -134,7 +134,7 @@ console.log(isString("veggie"));
 	// Exercise 16
 	// Create an array with your classmates in it
 
-	var classmatesArray = ["evelyn", "emily", "jacob", "ramon", "moriah", "tyler", "ry", "valeria", "sung", "esai", "delayne", "nayoung", "roshan", "ron", "rex"];
+	var classmatesArray = ["evelyn", "emily", "jacob", "ramon", "moriah", "tyler", "ry", "valeria", "sung", "esai", "delayne", "nayoung", "roshan", "ron", "rex", "sarah"];
 
 	console.log(classmatesArray);
 
@@ -142,11 +142,26 @@ console.log(isString("veggie"));
 	// Exercise 17
 	// Create a function that returns a random item from an array
 
-	function getRandomItem(classmatesArray) {
-	    return classmatesArray[Math.floor(Math.random()*classmatesArray.length)];
+	function getRandomItem(anArray) {
+	    return anArray[Math.floor(Math.random()*anArray.length)];
 	}
 // or: can also do: function getRandomItem(array) { return array[getRandomNumber()]; }
 	console.log(getRandomItem(classmatesArray));
+
+	// Exercise 18
+	// Create a function that prints a list of names randomly from the Apex array.
+	// TODO: Make sure that there is no duplicate name.
+
+	function randomNames() {
+	    //main problem to solve: only 1 item at the time
+		for (var x = 0; x < classmatesArray.length; x++) {
+	    console.log("Index: " + x + " " + getRandomItem(classmatesArray));
+        }
+	}
+	randomNames();
+// randomNamesFromApex(classmatesArray) {
+	// 	return classmatesArray[Math.floor(Math.random()*classmatesArray.length)];
+	// }
 
 </script>
 </body>
