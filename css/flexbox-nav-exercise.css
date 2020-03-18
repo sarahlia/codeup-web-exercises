@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header nav .logo {
+    /*color: black;*/
+    /*position: absolute;*/
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: lightgrey;
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+}
+
+ul li a {
+    display: inline-block;
+}
+
+a:hover {
+    color: blue;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    /*display: inline-block;*/
+}
+
+li {
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+}
+
+.left-navbar {
+    font-family: "Work Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    /*margin-top: 0;*/
+    /*color: black;*/
+}
+
+.logo {
+    font-size: 3em;
+    font-family: "Montseratt", sans-serif;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-left: 0;
+    /*position: absolute;*/
+    display: flex;
+    margin: auto;
+    /*width: 100%;*/
+}
+
+.right-navbar {
+    /*display: inline-block;*/
+    font-family: "Work Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    /*margin-top: 0;*/
+
+}
