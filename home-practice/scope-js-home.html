@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scope JS-Home</title>
+</head>
+<body>
+	<script>
+        // declare a function that will be invoked immediately
+        // notice the parens surrounding the function. these are necessary
+        (function () {
+            // variables and functions in here are only accessible inside this function's scope
+            var iffeVar = "I'm local to the IIFE.";
+            //check to see if it can print the variable while inside the scope.
+            console.log(iffeVar);
+
+            function totalTip (totalBill, tipPercent) {
+                return totalBill * tipPercent;
+            }
+            console.log(totalTip(50, 0.2));
+
+        })();
+        // also notice the double parenthesis after the closing curly brace. these invoke the function.
+        alert(iffeVar); // undefined
+
+	</script>
+</body>
+</html>
