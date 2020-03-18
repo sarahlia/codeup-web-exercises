@@ -9,9 +9,10 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
     function sayHello(name) {
-        console.log("Hello, " + name + "!");
+        return "Hello, " + name + "!";
     }
-sayHello("codeup");
+console.log( sayHello("codeup") );
+console.log( sayHello("Nainggolan") );
 
 /**
  * TODO:
@@ -20,10 +21,11 @@ sayHello("codeup");
  *
  * console.log 'helloMessage' to check your work
  */
-    sayHello("Sarah");
     var helloMessage = sayHello("Sarah");
     console.log(helloMessage);
 
+helloMessage = sayHello("Sophie");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -32,9 +34,7 @@ sayHello("codeup");
  * console.
  */
     var myName = "Lia";
-    sayHello(myName);
-
-
+    console.log(sayHello(myName));
 
 
 
@@ -60,13 +60,15 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
     function isTwo(num) {
-        (num === 2) ? console.log(true) : console.log(false);
+        // (num === 2) ? console.log(true) : console.log(false);
+        return 2 === num;
     }
 
     console.log(isTwo(1));
     console.log(isTwo(2));
     console.log(isTwo(3));
 
+    console.log("random = " + random, isTwo(random));
 
 /**
  * TODO:
@@ -98,10 +100,9 @@ var random = Math.floor((Math.random() * 3) + 1);
  */
     var billTotal = prompt("What is your total bill?");
     var percentTip = prompt("What percentage would you like to tip(in decimals, i.e. 0.20 for a 20% tip)?");
+    var tipTotal = calculateTip(billTotal, percentTip);
 
-    alert(calculateTip(billTotal, percentTip));
-
-
+    alert(tipTotal);
 
 /**
  * TODO:
