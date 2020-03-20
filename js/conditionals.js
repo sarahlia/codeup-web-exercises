@@ -15,11 +15,72 @@
  *
  * Can you refactor your code to use functions?
  */
-    if(confirm("Would you like to enter a number?")) {
-        prompt("Enter a number.");
+var r = confirm("Would you like to enter a number?");
+if (r === true) {
+    var numb = prompt("Enter a number.");
+    if(isNaN(numb)) {
+        alert("That is NOT a number.");
     } else {
-        alert("What you entered was not a number.");
+        if (numb % 2 === 0) {
+            alert("That number is even.");
+            alert((parseInt(numb) + parseInt(100)) + " is your number + 100.");
+            if (Math.sign(numb) === 1) {
+                alert("Your number is positive.");
+            } else if (Math.sign(numb) === -1) {
+                alert("Your number is negative.");
+            } else {
+                alert("That number is NEITHER positive nor negative.");
+            }
+        } else if (numb % 2 !== 0) {
+            alert("That number is odd.");
+            alert((parseInt(numb) + parseInt(100)) + " is your number + 100.");
+            if (Math.sign(numb) === 1) {
+                alert("Your number is positive.");
+            } else if (Math.sign(numb) === -1) {
+                alert("Your number is negative.");
+            } else {
+                alert("That number is NEITHER positive nor negative.");
+            }
+        }
     }
+} else {
+    alert("Goodbye.");
+}
+
+//Refactor into a function:
+// function checkNumb(numb) {
+//     if (isNaN(numb)) {
+//         alert("That is NOT a number.");
+//     } else {
+//         if (numb % 2 === 0) {
+//             alert("That number is even.");
+//             alert((parseInt(numb) + parseInt(100)) + " is your number + 100.");
+//             if (Math.sign(numb) === 1) {
+//                 alert("Your number is positive.");
+//             } else if (Math.sign(numb) === -1) {
+//                 alert("Your number is negative.");
+//             } else {
+//                 alert("That number is NEITHER positive nor negative.");
+//             }
+//         } else {
+//             alert("That number is odd.");
+//             alert((parseInt(numb) + parseInt(100)) + " is your number + 100.");
+//             if (Math.sign(numb) === 1) {
+//                 alert("Your number is positive.");
+//             } else if (Math.sign(numb) === -1) {
+//                 alert("Your number is negative.");
+//             } else {
+//                 alert("That number is NEITHER positive nor negative.");
+//             }
+//         }
+//     }
+// }
+
+
+// alert(checkNumb(24));
+// alert(checkNumb(-12));
+// alert(checkNumb(0));
+// alert(checkNumb("sarah"));
 
 
 /* ########################################################################## */
