@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Manipulating Array JS practice</title>
+	</head>
+	<body>
+		<script>
+			"use strict";
+
+			// pop and shift
+			var todoList = ['Take out the trash', 'Clean the car', 'Pay the bills'];
+			console.log('My todo list:');
+			console.log(todoList);
+
+			// console.log('Completing the last item: ' + todoList[todoList.length - 1]);
+
+			var doneItem = todoList.pop();
+			console.log("Task complete: " + doneItem);
+
+			console.log(todoList);
+			console.log('Completing the first item: ' + todoList[0]);
+			doneItem = todoList.shift();
+			console.log("Task complete: " +doneItem);
+
+			console.log(todoList);
+
+
+			// indexOf and lastIndexOf
+			var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'red'];
+			var index = colors.indexOf("orange");
+			console.log(index);
+
+			index = colors.lastIndexOf("red");
+			console.log(index);
+
+
+			// splice
+			console.log(colors);
+			// remove the first red
+			var removed = colors.splice(0, 1);
+			console.log(removed);
+			console.log(colors);
+
+			// remove green
+			var greenremoved = colors.splice(colors.indexOf("green"), 1);
+			console.log(greenremoved);
+			console.log(colors);
+
+			// add purple, green after yellow
+			colors.splice(colors.indexOf("yellow") + 1, 0, "purple", "green");
+			console.log(colors);
+
+			// replace indigo, violet with black
+			colors.splice(colors.indexOf("indigo"), 2, "black");
+			console.log(colors);
+
+			// reverse the colors array	
+			console.log(colors.reverse());
+
+			// sort the colors array alphabetically
+			console.log(colors.sort());			
+
+
+
+		</script>
+	</body>
+</html>
