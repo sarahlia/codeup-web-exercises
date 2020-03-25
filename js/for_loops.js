@@ -11,14 +11,15 @@ for(var i = 1; i <= 10; i++) {
 }
 
 // Exercise 3
-// var randomNumber = Math.floor(Math.random() * 200) + 20;
+
 // console.log(randomNumber);
 
 for(var i = 1; i <= 10; i++) {
-    if (i % 2 === 0) {
-        console.log((Math.floor(Math.random() * 200) + 20)+ " is even");
+    var randomNumber = Math.floor(Math.random() * 200) + 20;
+    if (randomNumber % 2 === 0) {
+        console.log(randomNumber+ " is even");
     } else {
-        console.log((Math.floor(Math.random() * 200) + 20) + " is odd.");
+        console.log(randomNumber + " is odd.");
     }
 }
 
