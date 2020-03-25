@@ -9,18 +9,16 @@ for(var i = 1; i <= 10; i++) {
 }
 
 // Exercise 3
-var randomNumber = Math.floor(Math.random() * 200) + 20;
-console.log(randomNumber);
+// var randomNumber = Math.floor(Math.random() * 200) + 20;
+// console.log(randomNumber);
 
 for(var i = 1; i <= 10; i++) {
     if (i % 2 === 0) {
-        console.log(randomNumber + i + " is even");
+        console.log((Math.floor(Math.random() * 200) + 20)+ " is even");
     } else {
-        console.log(randomNumber + i + " is odd.");
+        console.log((Math.floor(Math.random() * 200) + 20) + " is odd.");
     }
 }
-// var na = '2';
-// console.log(na.repeat(2));
 
 // Exercise 4
 for(var i = 1; i <= 9; i++) {
