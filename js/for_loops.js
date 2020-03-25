@@ -1,3 +1,5 @@
+// branch: javascript-loops
+
 "use strict";
 
 // Exercise 2
