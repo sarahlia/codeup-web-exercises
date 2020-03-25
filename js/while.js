@@ -1,6 +1,3 @@
-// branch: javascript-loops
-
-
 "use strict";
 var i = 1;
 
