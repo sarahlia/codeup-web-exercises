@@ -60,7 +60,7 @@
     // }
 
     shoppers.forEach(function(aShopper) {
-        if (aShopper.amount >= 200) {
+        if (aShopper.amount > 200) {
             console.log(aShopper.name + ". Amount before discount: $" + aShopper.amount + ". Discount: $" + (aShopper.amount * 0.12) + ". Amount after discount: $" + (aShopper.amount * 0.88));
         } else {
             console.log(aShopper.name + ". Amount: $" + aShopper.amount);
@@ -161,5 +161,14 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(title, author) {
+        return title + " " + author;
+    }
+    console.log(createBook(1984, "George Orwell"));
+
+
+    function showBookInfo(title, author) {
+
+    }
 
 })();
