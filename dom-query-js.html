@@ -24,6 +24,12 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="change-main-header">Change Main Header</button>
+<button id="change-subheader">Change Subheader</button>
+<button id="change-list">Change List</button>
+<button id="change-subparagraph">Change Subparagraph</button>
+
+
 
 <script>
     (function() {
@@ -33,7 +39,7 @@
 
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        // mainHeader.innerHTML = "JavaScript is Cool";
 
 
         // TODO: Uncomment the next line and get the sub header element by id
@@ -41,7 +47,7 @@
         console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        // subHeader.style.color = "blue";
 
 
         // TODO: Uncomment the next line and get all list items
@@ -59,17 +65,17 @@
         // listOne.style.color = "blue";
 
         //or:
-        for(var i = 0; i < listItems.length; i++) {
-            if (i % 2 !== 0) {
-                listItems[i].style.color = "grey";
-            }
-
-            var dbId = listItems[i].getAttribute("data-dbid");
-            console.log("dbId: " + dbId);
-            if (dbId === "1") {
-                listItems[i].style.color = "blue";
-            }
-        }
+        // for(var i = 0; i < listItems.length; i++) {
+        //     if (i % 2 !== 0) {
+        //         listItems[i].style.color = "grey";
+        //     }
+        //
+        //     var dbId = listItems[i].getAttribute("data-dbid");
+        //     console.log("dbId: " + dbId);
+        //     if (dbId === "1") {
+        //         listItems[i].style.color = "blue";
+        //     }
+        // }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
@@ -79,7 +85,42 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         // document.querySelector(".sub-paragraph").innerText = "Mission Accomplished!";
-        subParagraphs[0].innerHTML = "Mission Accomplished!";
+        // subParagraphs[0].innerHTML = "Mission Accomplished!";
+
+
+        var btnMainHeader = document.getElementById("change-main-header");
+
+        btnMainHeader.addEventListener('click', function() {
+           mainHeader.innerHTML = "JavaScript is Cool";
+        });
+
+        var btnSubheader = document.getElementById("change-subheader");
+
+        btnSubheader.addEventListener('click', function() {
+           subHeader.style.color = "blue";
+        });
+
+        var btnList = document.getElementById("change-list");
+
+        btnList.addEventListener('click', function() {
+            for(var i = 0; i < listItems.length; i++) {
+                if (i % 2 !== 0) {
+                    listItems[i].style.color = "grey";
+                }
+
+                var dbId = listItems[i].getAttribute("data-dbid");
+                if (dbId === "1") {
+                    listItems[i].style.color = "blue";
+                }
+            }
+        });
+
+
+        var btnSubparagraph = document.getElementById("change-subparagraph");
+
+        btnSubparagraph.addEventListener('click', function() {
+           subParagraphs[0].innerHTML = "Mission Accomplished!";
+        });
 
     })();
 
