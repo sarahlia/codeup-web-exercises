@@ -117,25 +117,46 @@ geocode("701 Commerce St, Dallas, TX, 75202", mapboxToken).then(function(result)
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        center: result,
+        // center: result,
         zoom: 16
     });
+    // Add the code from the TODOs below:
+    // map.setCenter({center: result});
+    // map.jumpTo({center: result});
+    map.flyTo({center: result});
+
 });
 
-
-
-
-
+// geocode("The White House", mapboxToken).then(function(result) {
+//     console.log(result);
+//     var map = new mapboxgl.Map({
+//         container: 'map',
+//         style: 'mapbox://styles/mapbox/streets-v9',
+//         // center: result,
+//         zoom: 16
+//     });
+//     // Add the code from the TODOs below:
+//     // map.setCenter({center: result});
+//     // map.jumpTo({center: result});
+//     map.flyTo({center: result});
+//
+// });
 //TODO: Using the geocode method above, add a marker at Codeup to the map
 //TODO: Instead of setCenter try using map.jumpTo()
 //TODO: Instead of setCenter try using map.flyTo()
 
 
 
-// TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Musume
 
+// TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -96.8084, lat: 32.7799} to get a physical address for the Sixth Floor Musume
+reverseGeocode({lng: -96.8084, lat: 32.7799}, mapboxToken).then(function(result) {
+    console.log("reverseGeocode: " + result);
+});
 
 
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
+reverseGeocode({lng: -96.749041, lat: 32.918549}, mapboxToken).then(function(result) {
+    console.log("reverseGeocode: " + result);
+});
 
 
