@@ -17,6 +17,16 @@ console.log('token: ' + mapboxToken);
 
 //TODO TOGETHER: Set map to Dallas area using the coordinates [-96.8057, 32.7787]
 
+mapboxgl.accessToken = mapboxToken;
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [-96.8057, 32.7787],
+    zoom: 18
+
+
+
+});
 
 
 
