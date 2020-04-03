@@ -15,13 +15,19 @@ geocode("6602 Melrose Ave, Los Angeles, CA 90038", mapboxToken2).then(function(r
 var markerOptions = {
     color: "red"
 };
-var marker = new mapboxgl.Marker(markerOptions)
-    .setLngLat([-118.338942, 34.083393])
-    .addTo(map);
+
+var div = window.document.createElement('div');
+div.innerHTML = 'Osteria Mozza';
 
 var popup = new mapboxgl.Popup()
-    .setText("Osteria Mozza")
+    // .setText("Osteria Mozza")
+    .setDOMContent(div)
     .addTo(map);
 
-marker.setPopup(popup);
+var marker = new mapboxgl.Marker(markerOptions)
+    .setLngLat([-118.338942, 34.083393])
+    .setPopup(popup)
+    .addTo(map);
+
+// marker.setPopup(popup);
 
