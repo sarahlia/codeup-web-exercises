@@ -1,0 +1,37 @@
+/*table {
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 5px 10px;
+}*/
+
+#roast-selection-top {
+    width: 650px;
+}
+
+#coffee-name {
+    width: 650px;
+}
+
+#first-submit {
+    width: 650px;
+}
+
+h5 {
+    width: 650px;
+}
+
+#roast-selection-bottom {
+    width: 650px;
+}
+
+#name {
+    width: 650px;
+}
+
+#second-submit {
+    width: 650px;
+}
