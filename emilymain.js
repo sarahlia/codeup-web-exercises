@@ -2,11 +2,12 @@
 
 //renders coffee cards and stores them as html
 function renderCoffee(coffee) {
-    var html = '<div class="card d-flex align-items-center">';
-    html += '<div class="card-body d-flex justify-content-center">' + '</div>';
-    html += '<p>' + coffee.name + '</p>';
-    html += '<p>' + coffee.roast + '</p>';
+    var html = '<div class="card align-items-center">';
+    html += '<div class="card-title justify-content-center">' + '</div>';
+    html += '<div>' + coffee.name + '</div>';
+    html += '<div>' + coffee.roast + '</div>';
     html += '<div>';
+
     return html;
 }
 
@@ -61,7 +62,7 @@ function keyCoffee() {
         tbody.innerHTML = html;
     }
 }
-
+//adds DOM event when keying in coffee name
 document.getElementById("coffee-name").addEventListener("keyup", keyCoffee);
 
 var tbody = document.querySelector('#coffees');
@@ -70,4 +71,6 @@ var roastSelection = document.querySelector('#roast-selection-top');
 
 tbody.innerHTML = renderCoffees(coffees);
 
+//adds DOM event when clicking on the submit button
 submitButton.addEventListener('click', updateCoffees);
+

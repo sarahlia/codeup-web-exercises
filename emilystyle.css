@@ -23,6 +23,10 @@ td, th {
     padding: 0;
 }
 
+#coffees {
+    width: 600px;
+}
+
 .right-page {
     margin: 0;
     padding: 0;
