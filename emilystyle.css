@@ -8,6 +8,26 @@ td, th {
     padding: 5px 10px;
 }*/
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    margin: 0;
+    padding: 0;
+}
+
+.left-page {
+    margin: 0;
+    padding: 0;
+}
+
+.right-page {
+    margin: 0;
+    padding: 0;
+}
+
 #roast-selection-top {
     width: 650px;
 }
