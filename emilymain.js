@@ -1,12 +1,12 @@
 "use strict";
 
-//renders coffee cards and stores them as html
+//renders coffee cards and puts them on the page as html
 function renderCoffee(coffee) {
-    var html = '<div class="card align-items-center">';
-    html += '<div class="card-title justify-content-center">' + '</div>';
-    html += '<div>' + coffee.name + '</div>';
-    html += '<div>' + coffee.roast + '</div>';
-    html += '<div>';
+    var html = '<div class="card border-white text-dark align-items-center">';
+    // html += '<div class="card-title justify-content-center">' + '</div>';
+    html += '<p>' + coffee.name + '</p>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
