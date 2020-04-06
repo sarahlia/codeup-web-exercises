@@ -2,14 +2,23 @@
 
 //renders coffee cards and puts them on the page as html
 function renderCoffee(coffee) {
-    var html = '<div class="card border-white text-dark align-items-center">';
+    var html = '<div class="card border-white align-items-center">';
     // html += '<div class="card-title justify-content-center">' + '</div>';
-    html += '<p>' + coffee.name + '</p>';
+    html += '<h6>' + coffee.name + '</h6>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
 
     return html;
 }
+
+// function renderRoast(coffee) {
+//     var html = '<div class="card border-white text-dark align-items-center">';
+//     // html += '<p>' + coffee.name + '</p>';
+//     html += '<p>' + coffee.roast + '</p>';
+//     html += '</div>';
+//
+//     return html;
+// }
 
 //renders coffee cards by coffee id# in ascending  order, displays it below the id "coffees"
 function renderCoffees(coffees) {
@@ -72,5 +81,5 @@ var roastSelection = document.querySelector('#roast-selection-top');
 tbody.innerHTML = renderCoffees(coffees);
 
 //adds DOM event when clicking on the submit button
-submitButton.addEventListener('click', updateCoffees);
+submitButton.addEventListener('submit', updateCoffees);
 
