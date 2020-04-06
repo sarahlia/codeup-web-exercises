@@ -1,6 +1,6 @@
 "use strict";
 
-//renders coffee cards and puts them on the page as html
+//renders coffee cards and puts html tags on them
 function renderCoffee(coffee) {
     var html = '<div class="card border-white align-items-center">';
     // html += '<div class="card-title justify-content-center">' + '</div>';
@@ -29,7 +29,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
-//dropdown Roast selection
+//this is the dropdown Roast selection
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -41,6 +41,7 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -64,7 +65,7 @@ var coffees = [
 function keyCoffee() {
     var html = '';
     for (var i = 0; i < coffees.length; i++ ) {
-        if (coffees[i].name.toLowerCase().includes(document.getElementById("coffee-name").value.toLowerCase())) {
+        if (coffees[i].name.toLowerCase().includes(document.getElementById('coffee-name').value.toLowerCase())) {
             console.log(coffees.name);
             html += renderCoffee(coffees[i]);
         }
@@ -72,11 +73,14 @@ function keyCoffee() {
     }
 }
 //adds DOM event when keying in coffee name
-document.getElementById("coffee-name").addEventListener("keyup", keyCoffee);
+document.getElementById('coffee-name').addEventListener('keyup', keyCoffee);
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#first-submit');
+
+//adds DOM event when the dropdown button is changed/clicked
 var roastSelection = document.querySelector('#roast-selection-top');
+roastSelection.addEventListener('change', updateCoffees);
 
 tbody.innerHTML = renderCoffees(coffees);
 
