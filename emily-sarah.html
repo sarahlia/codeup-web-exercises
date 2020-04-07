@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Sarah and Emily's Coffee Project!</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="emily-sarah-style.css">
+</head>
+<body>
+
+<div class="d-flex justify-content-center header">
+	<h1 class="box d-flex justify-content-center pt-1 mb-0">Coffee!</h1>
+</div>
+<hr>
+<div class="main-container d-flex">
+
+	<div class="container d-flex flex-column left-page">
+		<div class="row mx-0">
+			<div class="d-flex flex-column justify-content-center col-6 left-one" id="coffees">
+				<!--            <div>-->
+				<!--                <div>-->
+				<!--                    <div>-->
+				<!--                        <div>ID</div>-->
+				<!--                        <div>NAME</div>-->
+				<!--                        <div>ROAST</div>-->
+				<!--                    </div>-->
+				<!--                </div>-->
+				<!--                <div ></div>-->
+				<!--            </div>-->
+			</div>
+		</div>
+	</div>
+
+	<div class="container d-flex flex-column right-page">
+		<div class="row">
+			<div class="d-flex flex-column col-6 selectaroast">
+				<div class="form-group">
+					<label for="roast-selection-top">Roast</label>
+					<select class="form-control" id="roast-selection-top">
+						<option>all</option>
+						<option>light</option>
+						<option>medium</option>
+						<option>dark</option>
+					</select>
+
+					<div class="form-group">
+						<label for="coffee-name">Coffee Name</label>
+						<input type="text" class="form-control" id="coffee-name">
+					</div>
+
+					<button id="first-submit" type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+				</div>
+			</div>
+		</div>
+
+
+		<!--            <hr>-->
+		<!-- THIS IS THE START OF THE BONUS-->
+		<!--            <div class="d-flex justify-content-center">-->
+		<!--                <h3>Add a Coffee</h3>-->
+		<!--            </div>-->
+		<div class="row">
+			<div class="d-flex flex-column col-6 mt-4" id="add-a-coffee">
+				<div class="form-group">
+					<div class="d-flex justify-content-center">
+						<h3>Add a Coffee</h3>
+					</div>
+
+					<label for="roast-selection-bottom">Roast</label>
+					<!--                might need to change ID below to roast-selection to match ID as top-->
+					<select class="form-control" id="roast-selection-bottom">
+						<option>all</option>
+						<option>light</option>
+						<option>medium</option>
+						<option>dark</option>
+					</select>
+
+					<div class="form-group">
+						<label for="new-coffee-name">Name</label>
+						<input type="text" class="form-control" id="new-coffee-name">
+					</div>
+
+					<button id="second-submit" type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="emily-sarah-main.js"></script>
+
+
+</body>
+</html>
