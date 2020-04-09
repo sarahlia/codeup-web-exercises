@@ -6,7 +6,7 @@
 <body>
 <h1>Konami Code</h1>
 
-<audio id="pop"><source src="mario-trim.m4a" type="audio/mpeg"></audio>
+<audio id="super-mario"><source src="mario-trim.m4a" type="audio/mpeg"></audio>
 
 <script src="js/jquery.js"></script>
 <script>
@@ -53,10 +53,10 @@
 
     function activateKonamiCheats() {
         alert("You have added 30 lives!");
-		$('*').css('background-color', 'green');
+		$('body').css('background-color', 'green');
 
-		console.log($('audio#pop'));
-        var audio = $('audio#pop')[0];
+		console.log($('#super-mario'));
+        var audio = $('#super-mario')[0];
         audio.play();
     }
 
