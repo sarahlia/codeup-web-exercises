@@ -8,7 +8,8 @@
 <body>
 
 	<div class="codeup">
-		<h1>FEATURED PRODUCT</h1>
+		<h1 id="featured-header">FEATURED PRODUCT</h1>
+		<h1 id="codeup-header">Hello Codeup</h1>
 		<ul class="nav" id="navlinks">
 			<li id="services">SERVICES</li>
 			<li id="work">WORK</li>
@@ -25,8 +26,8 @@
 		"use strict";
 
 		$(document).ready(function() {
-		    $('h1').click(function() {
-				$('h1').css('background-color', 'green');
+		    $('#featured-header').click(function() {
+				$('#featured-header').css('background-color', 'green');
 			});
 
 		    $('p').dblclick(function() {
@@ -43,6 +44,13 @@
             };
 
             $('li').hover(inHandler, outHandler);
+
+// or: we can combine lines 38 through 46 like this:
+// 			$('li').hover(function () {
+// 					$('li').css('color', 'red');
+// 			}, function () {
+// 					$('li').css('color', 'black');
+// 			});
 
 
 		   // alert("The DOM has finished loading.");
