@@ -10,40 +10,54 @@
 	<div class="codeup">
 		<h1>FEATURED PRODUCT</h1>
 		<ul class="nav" id="navlinks">
-			<li id="services"><a href="#">SERVICES</a></li>
-			<li id="work"><a href="#">WORK</a></li>
-			<li id="blog"><a href="#">BLOG</a></li>
-			<li id="contact"><a href="#">CONTACT</a></li>
+			<li id="services">SERVICES</li>
+			<li id="work">WORK</li>
+			<li id="blog">BLOG</li>
+			<li id="contact">CONTACT</li>
 		</ul>
 		<p class="bottomofpage">Thanks for visiting our page!</p>
 	</div>
 
 
-
-
-
-
-
-
-<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery-2.2.4.min.js"></script>
 
 	<script>
 		"use strict";
 
 		$(document).ready(function() {
+		    $('h1').click(function() {
+				$('h1').css('background-color', 'green');
+			});
+
+		    $('p').dblclick(function() {
+		       $('p').css('font-size', '18px');
+			});
+
+
+		    var inHandler = function() {
+		        $('li').css('color', 'red');
+			};
+
+            var outHandler = function() {
+                $('li').css('color', 'black');
+            };
+
+            $('li').hover(inHandler, outHandler);
+
+
 		   // alert("The DOM has finished loading.");
 
 			// alert($('#contact').html());
 			// alert($('#blog').html());
 			// $('.codeup').css('border', '1px solid red');
 
-			$('li').css('font-size', '20px');
-			$('li').css('background-color', 'yellow');
-			$('h1').css('background-color', 'yellow');
-			$('p').css('background-color', 'yellow');
-			alert($('h1').text());
-
-			$('li, h1, p').css('background-color', 'green');
+			// $('li').css('font-size', '20px');
+			// $('li').css('background-color', 'yellow');
+			// $('h1').css('background-color', 'yellow');
+			// $('p').css('background-color', 'yellow');
+			// alert($('h1').text());
+			//
+			// $('li, h1, p').css('background-color', 'green');
 
 		});
 
