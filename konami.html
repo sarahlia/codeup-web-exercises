@@ -21,7 +21,18 @@
         console.log(event.keyCode);
     });
 
-	// a map of Konami keys
+    var inHandler = function() {
+        $('.konami').css('color', 'red');
+    };
+
+    var outHandler = function() {
+        $('.konami').css('color', 'black');
+    };
+
+    $('.konami').hover(inHandler, outHandler);
+
+
+    // a map of Konami keys
 	var konamiKeys = {
 	    38: 'up',
 		40: 'down',
