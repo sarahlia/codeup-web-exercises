@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<audio id="pop"><source src="mario-trim.m4a" type="audio/mpeg"></audio>
+
+<script src="js/jquery.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+    });
+
+	// a map of Konami keys
+	var konamiKeys = {
+	    38: 'up',
+		40: 'down',
+		37: 'left',
+		39: 'right',
+		65: 'a',
+		66: 'b'
+	};
+
+	// Konami code sequence
+	var konamiSequence = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+
+	var konamiPosition = 0;
+
+	// keyup event handler
+	$(document).on('keyup', function(event) {
+	    var key = konamiKeys[event.keyCode];
+
+	    var requiredKey = konamiSequence[konamiPosition];
+
+	    // if what we're keying in = the Konami sequence at each position
+	    if (key === requiredKey) {
+	        konamiPosition++;
+
+	        // if we get to the end of the Konami sequence
+	        if(konamiPosition === konamiSequence.length) {
+	            activateKonamiCheats();
+	            konamiPosition = 0;
+			}
+		} else {
+	        konamiPosition = 0;
+		}
+	});
+
+    function activateKonamiCheats() {
+        alert("You have added 30 lives!");
+		$('*').css('background-color', 'green');
+
+		console.log($('audio#pop'));
+        var audio = $('audio#pop')[0];
+        audio.play();
+    }
+
+</script>
+</body>
+</html>
