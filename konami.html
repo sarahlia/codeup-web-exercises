@@ -2,10 +2,15 @@
 <html>
 <head>
 	<title>Konami Code</title>
+	<style>
+		.image {
+			display:none;
+		}
+	</style>
 </head>
 <body>
-<h1>Konami Code</h1>
-
+<h1 class="konami">Konami Code</h1>
+<img src="imgs/mario.png" class="image">
 <audio id="super-mario"><source src="mario-trim.m4a" type="audio/mpeg"></audio>
 
 <script src="js/jquery.js"></script>
@@ -52,12 +57,16 @@
 	});
 
     function activateKonamiCheats() {
+        console.log("Try clicking on the title!");
         alert("You have added 30 lives!");
 		$('body').css('background-color', 'green');
+		$('.konami').on('click', function() {
+			$('img').show();
+		});
 
 		console.log($('#super-mario'));
         var audio = $('#super-mario')[0];
-        audio.play();
+		audio.play();
     }
 
 </script>
