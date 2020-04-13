@@ -106,9 +106,10 @@
 			});
 
 			$('li').click(function() {
-					$('#yellowstone li').first().css('color', 'blue');
-					$('#zion li').first().css('color', 'blue');
-					$('#bryce li').first().css('color', 'blue');
+			    $(this).parent().children().first().css('color', 'blue');
+					// $('#yellowstone li').first().css('color', 'blue');
+					// $('#zion li').first().css('color', 'blue');
+					// $('#bryce li').first().css('color', 'blue');
 			});
 		});
 	</script>
