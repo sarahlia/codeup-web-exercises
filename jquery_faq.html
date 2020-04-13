@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery FAQ exercise</title>
+	<style>
+		.invisible {
+			visibility: hidden;
+		}
+
+		.highlight {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h3>FAQs about National Parks</h3>
+	<a href="#" id="toggle-dd">Click to toggle the answers.</a>
+	<dl>
+		<dt>What is the difference between a national park and a national forest?</dt>
+		<dd class="invisible">National parks are mandated to preserve resources unimpaired, while national forests are mandated to wisely manage resources for many sustainable uses.</dd>
+
+		<dt>Who oversees national parks and national forests?</dt>
+		<dd class="invisible">National parks are administered by the Department of the Interior, while national forests are administered by the Department of Agriculture.</dd>
+
+		<dt>Is Yellowstone the largest national park?</dt>
+		<dd class="invisible">No. More than half of Alaska’s national park units are larger, including Wrangell–St. Elias National Park and Preserve, which is the largest unit (13 million acres) in the National Park System.</dd>
+
+		<dt>Is Yellowstone the most visited national park?</dt>
+		<dd class="invisible">Yellowstone is in the top five national parks for number of recreational visitors. Great Smoky Mountains National Park often has the most.</dd>
+
+		<dt>How do you become a park ranger?</dt>
+		<dd class="invisible">Many National Park Service employees begin their careers as volunteers or as seasonal employees. Hiring is very competitive and is conducted through the Office of Personnel Management. Learn more about working with us on our website.</dd>
+
+		<dt>Can we swim in rivers and lakes?</dt>
+		<dd class="invisible">Swimming is not recommended because most lakes and streams are dangerously cold.</dd>
+
+		<dt>What is the Continental Divide?</dt>
+		<dd class="invisible">Think of the Continental Divide as the crest of the continent. Theoretically, when precipitation falls on the west side of the Divide, it eventually reaches the Pacific Ocean. When it falls on the east side of the Divide, it eventually reaches the Atlantic Ocean. In Yellowstone (as elsewhere), this ridgeline is not straight. You cross the Continental Divide three times between the South Entrance and the Old Faithful area. Craig Pass is the highest crossing, at 8,262 feet.</dd>
+
+	</dl>
+
+	<script src="js/jquery.js"></script>
+	<script>
+		"use strict";
+
+		$(document).ready(function() {
+			$('#toggle-dd').click(function(event) {
+			    event.preventDefault();
+			    $('dd').toggleClass('invisible');
+			});
+
+			$('dt').click(function(event) {
+			   event.preventDefault();
+			   $('dt').addClass('highlight');
+			});
+
+		});
+	</script>
+
+</body>
+</html>
