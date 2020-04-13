@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery traversing scratch</title>
+	<style>
+
+
+	</style>
+</head>
+<body>
+
+<h1>Parks List</h1>
+<h3>National Parks</h3>
+<ul id="national-parks">
+	<li>Arches</li>
+	<li>Badlands</li>
+	<li>Carlsbad Caverns</li>
+	<li>Denali</li>
+	<li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+	<li>Abilene</li>
+	<li>Big Bend</li>
+	<li>Choke Canyon</li>
+	<li>Davis Mountains</li>
+	<li>Enchanted Rock</li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('li').parent().css('background-color', '#0F0');
+        $('li').css('background-color', 'yellow');
+
+    });
+</script>
+
+</body>
+</html>
