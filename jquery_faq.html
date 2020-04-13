@@ -48,7 +48,7 @@
 
 	<!--	<div class="national-parks">-->
 
-	<h3>Yellowstone National Park</h3>
+		<h3>Yellowstone National Park</h3>
 		<ul class="national-parks" id="yellowstone">
 			<li>Located in Wyoming</li>
 			<li>The first national park in the US</li>
@@ -105,6 +105,11 @@
 			   $('li').css('font-weight', 'bold');
 			});
 
+			$('li').click(function() {
+					$('#yellowstone li').first().css('color', 'blue');
+					$('#zion li').first().css('color', 'blue');
+					$('#bryce li').first().css('color', 'blue');
+			});
 		});
 	</script>
 
