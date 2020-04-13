@@ -23,6 +23,9 @@
 		<dt>Who oversees national parks and national forests?</dt>
 		<dd class="invisible">National parks are administered by the Department of the Interior, while national forests are administered by the Department of Agriculture.</dd>
 
+		<dt>How did Yellowstone get its name?</dt>
+		<dd>Yellowstone National Park is named after the Yellowstone River, the major river running through the park. According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe, who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock Yellow River.” The trappers translated this into French as “Roche Jaune” or “Pierre Jaune.” In 1797, explorer-geographer David Thompson used the English translation—“Yellow Stone.” Lewis and Clark called the Yellowstone River by the French and English forms. Subsequent use formalized the name as “Yellowstone.</dd>
+
 		<dt>Is Yellowstone the largest national park?</dt>
 		<dd class="invisible">No. More than half of Alaska’s national park units are larger, including Wrangell–St. Elias National Park and Preserve, which is the largest unit (13 million acres) in the National Park System.</dd>
 
@@ -46,14 +49,20 @@
 
 		$(document).ready(function() {
 			$('#toggle-dd').click(function(event) {
-			    event.preventDefault();
+			    // event.preventDefault();
 			    $('dd').toggleClass('invisible');
 			});
 
-			$('dt').click(function(event) {
-			   event.preventDefault();
-			   $('dt').addClass('highlight');
-			});
+			//if we only want the dt that was clicked to be highlighted:
+            $('dt').click(function(event) {
+                $(this).addClass('highlight')
+            });
+
+			//all the dts will be highlighted when a dt is clicked:
+			// $('dt').click(function(event) {
+			//    event.preventDefault();
+			//    $('dt').addClass('highlight');
+			// });
 
 		});
 	</script>
