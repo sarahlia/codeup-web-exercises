@@ -14,6 +14,9 @@
 	</style>
 </head>
 <body>
+
+	<button id="last-li">Last list item</button>
+
 	<h3>FAQs about National Parks</h3>
 	<a href="#" id="toggle-dd">Click to toggle the answers.</a>
 	<dl>
@@ -43,6 +46,32 @@
 
 	</dl>
 
+	<h3>Yellowstone National Park</h3>
+<!--	<div class="national-parks">-->
+		<ul class="national-parks" id="yellowstone">
+			<li>Located in Wyoming</li>
+			<li>The first national park in the US</li>
+			<li>Old Faithful is a famous geyser</li>
+			<li>Takes its name from the Yellowstone River</li>
+		</ul>
+
+		<h3>Zion National Park</h3>
+		<ul class="national-parks" id="zion">
+			<li>Located in Utah</li>
+			<li>Originally called Mukuntuweap</li>
+			<li>Changed to Zion in 1919</li>
+			<li>Was designated the Zion National Park by President Woodrow Wilson</li>
+		</ul>
+
+		<h3>Bryce Canyon National Park</h3>
+		<ul class="national-parks" id="bryce">
+			<li>Also located in Utah, specifically southwestern Utah</li>
+			<li>Is not actually a canyon</li>
+			<li>Named after Ebenezer Bryce, a Mormon pioneer</li>
+			<li>Is much smaller than nearby Zion National Park</li>
+		</ul>
+<!--	</div>-->
+
 	<script src="js/jquery.js"></script>
 	<script>
 		"use strict";
@@ -63,6 +92,14 @@
 			//    event.preventDefault();
 			//    $('dt').addClass('highlight');
 			// });
+
+
+			$('#last-li').click(function() {
+                $('#yellowstone li').last().css('background-color', 'yellow');
+                $('#zion li').last().css('background-color', 'yellow');
+                $('#bryce li').last().css('background-color', 'yellow');
+            });
+
 
 		});
 	</script>
