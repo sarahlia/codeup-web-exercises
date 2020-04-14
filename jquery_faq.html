@@ -11,6 +11,46 @@
 		.highlight {
 			background-color: yellow;
 		}
+
+		.container {
+			display: flex;
+		}
+
+		.images {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.image {
+			height: 200px;
+			width: 160px;
+			border: black solid 1px;
+			margin: 50px 50px 15px 50px;
+		}
+
+		#one {
+			background-image: url(imgs/sun.png);
+			background-position: center;
+			background-size: cover;
+		}
+
+		#two {
+			background-image: url(imgs/moon.jpg);
+			background-position: center;
+			background-size: cover;
+		}
+
+		#three {
+			background-image: url(imgs/star.png);
+			background-position: center;
+			background-size: cover;
+		}
+
+		button {
+			width: 96px;
+			margin: auto;
+		}
+
 	</style>
 </head>
 <body>
@@ -72,7 +112,24 @@
 			<li>Is much smaller than nearby Zion National Park</li>
 		</ul>
 <!--	</div>-->
+	<hr>
+<!--	// BONUS-->
+	<div class="container">
+		<div class="images">
+			<div id="one" class="image"></div>
+			<button id="sun">Swap</button>
+		</div>
 
+		<div class="images">
+			<div id="two" class="image"></div>
+			<button>Swap</button>
+		</div>
+
+		<div class="images">
+			<div id="three" class="image"></div>
+			<button>Swap</button>
+		</div>
+	</div>
 	<script src="js/jquery.js"></script>
 	<script>
 		"use strict";
@@ -128,6 +185,8 @@
 					// $('#zion li').first().css('color', 'blue');
 					// $('#bryce li').first().css('color', 'blue');
 			});
+
+
 		});
 	</script>
 
