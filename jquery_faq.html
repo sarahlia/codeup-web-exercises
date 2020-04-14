@@ -55,6 +55,10 @@
 </head>
 <body>
 
+<div class="top-of-page">
+	<h1>Would you like to sign up for our newsletter?</h1>
+	<span id="x-button">x</span>
+</div>
 
 	<h3>FAQs about National Parks</h3>
 	<a href="#" id="toggle-dd">Click to toggle the answers.</a>
@@ -208,6 +212,11 @@
                 $(this).parent().children().first().css('background-image', 'url(imgs/moon.jpg)');
                 $('#one').css('background-image', 'url(imgs/star.png)');
             });
+
+            //JQuery Effects
+			$('#x-button').click(function() {
+			   $('.top-of-page').hide();
+			});
 		});
 	</script>
 
