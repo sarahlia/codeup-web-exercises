@@ -55,10 +55,12 @@
 </head>
 <body>
 
-<div class="top-of-page">
-	<h1>Would you like to sign up for our newsletter?</h1>
-	<span id="x-button">x</span>
-</div>
+	<div class="top-of-page">
+		<h1>Would you like to sign up for our newsletter?</h1>
+		<span id="x-button">x</span>
+	</div>
+
+	<h2>Please register for the site.</h2>
 
 	<h3>FAQs about National Parks</h3>
 	<a href="#" id="toggle-dd">Click to toggle the answers.</a>
@@ -224,6 +226,10 @@
             $('h3').click(function() {
                 $(this).next().slideToggle();
             });
+
+			//Exercise 3
+			$('h2').hide();
+			$('h2').fadeIn(8000);
 
 
 		});
