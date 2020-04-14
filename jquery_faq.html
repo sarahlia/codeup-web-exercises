@@ -184,9 +184,9 @@
 			// });
 
 			//Exercise 4 to bold the li items underneath it when an h3 is clicked:
-			$('h3').click(function() {
-			   $(this).next().css('font-weight','bold');
-			});
+			// $('h3').click(function() {
+			//    $(this).next().css('font-weight','bold');
+			// });
 
 
 			//Exercise 5 ( using .parent(), .children(), and .first() ):
@@ -213,10 +213,19 @@
                 $('#one').css('background-image', 'url(imgs/star.png)');
             });
 
-            //JQuery Effects
+            //JQUERY EFFECTS
+			//Exercise 1
 			$('#x-button').click(function() {
 			   $('.top-of-page').hide();
 			});
+
+			//Exercise 2
+			$('h3').next().hide();
+            $('h3').click(function() {
+                $(this).next().slideToggle();
+            });
+
+
 		});
 	</script>
 
