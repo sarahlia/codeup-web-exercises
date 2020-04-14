@@ -43,12 +43,12 @@
 
 		<dt>What is the Continental Divide?</dt>
 		<dd class="invisible">Think of the Continental Divide as the crest of the continent. Theoretically, when precipitation falls on the west side of the Divide, it eventually reaches the Pacific Ocean. When it falls on the east side of the Divide, it eventually reaches the Atlantic Ocean. In Yellowstone (as elsewhere), this ridgeline is not straight. You cross the Continental Divide three times between the South Entrance and the Old Faithful area. Craig Pass is the highest crossing, at 8,262 feet.</dd>
-
 	</dl>
+	<hr>
 
 	<!--	<div class="national-parks">-->
 
-		<h3>Yellowstone National Park</h3>
+		<h3 id="yellowstone-heading">Yellowstone National Park</h3>
 		<ul class="national-parks" id="yellowstone">
 			<li>Located in Wyoming</li>
 			<li>The first national park in the US</li>
@@ -56,7 +56,7 @@
 			<li>Takes its name from the Yellowstone River</li>
 		</ul>
 
-		<h3>Zion National Park</h3>
+		<h3 id="zion-heading">Zion National Park</h3>
 		<ul class="national-parks" id="zion">
 			<li>Located in Utah</li>
 			<li>Originally called Mukuntuweap</li>
@@ -64,7 +64,7 @@
 			<li>Was designated the Zion National Park by President Woodrow Wilson</li>
 		</ul>
 
-		<h3>Bryce Canyon National Park</h3>
+		<h3 id="bryce-heading">Bryce Canyon National Park</h3>
 		<ul class="national-parks" id="bryce">
 			<li>Also located in Utah, specifically southwestern Utah</li>
 			<li>Is not actually a canyon</li>
@@ -93,18 +93,35 @@
 			//    event.preventDefault();
 			//    $('dt').addClass('highlight');
 			// });
+			// -------------------------------------------------------------------
+			//Exercise 3 (using individual id names):
+			// $('#last-li').click(function() {
+            //     $('#yellowstone li').last().css('background-color', 'yellow');
+            //     $('#zion li').last().css('background-color', 'yellow');
+            //     $('#bryce li').last().css('background-color', 'yellow');
+            // });
 
-
-			$('#last-li').click(function() {
-                $('#yellowstone li').last().css('background-color', 'yellow');
-                $('#zion li').last().css('background-color', 'yellow');
-                $('#bryce li').last().css('background-color', 'yellow');
+			//Exercise 3 (using .each() and "this"):
+            $('#last-li').click(function() {
+				$('li').each(function(index) {
+				    if (index % 4 === 3)  {
+				        $(this).css('background-color', 'yellow');
+					}
+				});
             });
 
+            //Exercise 4 to bold all the li items when any h3 is clicked:
+			// $('h3').click(function() {
+			//    $('li').css('font-weight', 'bold');
+			// });
+
+			//Exercise 4 to bold the li items underneath it when an h3 is clicked:
 			$('h3').click(function() {
-			   $('li').css('font-weight', 'bold');
+			   $(this).next().css('font-weight','bold');
 			});
 
+
+			//Exercise 5 ( using .parent(), .children(), and .first() ):
 			$('li').click(function() {
 			    $(this).parent().children().first().css('color', 'blue');
 					// $('#yellowstone li').first().css('color', 'blue');
