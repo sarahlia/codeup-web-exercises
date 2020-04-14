@@ -55,7 +55,6 @@
 </head>
 <body>
 
-	<button id="last-li">Last list item</button>
 
 	<h3>FAQs about National Parks</h3>
 	<a href="#" id="toggle-dd">Click to toggle the answers.</a>
@@ -87,6 +86,7 @@
 	<hr>
 
 	<!--	<div class="national-parks">-->
+	<button id="last-li">Last list item</button>
 
 		<h3 id="yellowstone-heading">Yellowstone National Park</h3>
 		<ul class="national-parks" id="yellowstone">
@@ -159,13 +159,20 @@
             // });
 
 			//Exercise 3 (using .each() and "this"):
-            $('#last-li').click(function() {
-				$('li').each(function(index) {
-				    if (index % 4 === 3)  {
-				        $(this).css('background-color', 'yellow');
-					}
+            // $('#last-li').click(function() {
+			// 	$('li').each(function(index) {
+			// 	    if (index % 4 === 3)  {
+			// 	        $(this).css('background-color', 'yellow');
+			// 		}
+			// 	});
+            // });
+
+            // using Douglas' way for Exercise 3:
+			$('#last-li').click(function() {
+			    $('ul').each(function() {
+			        $(this).children().last().toggleClass('highlight');
 				});
-            });
+			});
 
             //Exercise 4 to bold all the li items when any h3 is clicked:
 			// $('h3').click(function() {
