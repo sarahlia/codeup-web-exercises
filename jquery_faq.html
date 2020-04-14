@@ -117,17 +117,17 @@
 	<div class="container">
 		<div class="images">
 			<div id="one" class="image"></div>
-			<button id="sun">Swap</button>
+			<button id="button-one">Swap</button>
 		</div>
 
 		<div class="images">
 			<div id="two" class="image"></div>
-			<button>Swap</button>
+			<button id="button-two">Swap</button>
 		</div>
 
 		<div class="images">
 			<div id="three" class="image"></div>
-			<button>Swap</button>
+			<button id="button-three">Swap</button>
 		</div>
 	</div>
 	<script src="js/jquery.js"></script>
@@ -186,7 +186,21 @@
 					// $('#bryce li').first().css('color', 'blue');
 			});
 
+			//bonus
+			$('#button-one').click(function() {
+			   $(this).parent().children().first().css('background-image', 'url(imgs/moon.jpg)');
+			   $('#two').css('background-image', 'url(imgs/sun.png)');
+			});
 
+            $('#button-three').click(function() {
+                $(this).parent().children().first().css('background-image', 'url(imgs/sun.png)');
+                $('#two').css('background-image', 'url(imgs/star.png)');
+            });
+
+            $('#button-two').click(function() {
+                $(this).parent().children().first().css('background-image', 'url(imgs/moon.jpg)');
+                $('#one').css('background-image', 'url(imgs/star.png)');
+            });
 		});
 	</script>
 
