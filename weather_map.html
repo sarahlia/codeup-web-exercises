@@ -34,8 +34,8 @@
 		</div>
 
 <!--		cards for each day's weather-->
-		<div class="row">
-			<div id="april16" class="col card" style="width: 18rem;">
+		<div class="row" id="april16">
+<!--			<div  class="col card" style="width: 18rem;">-->
 <!--					<div class="card-header">-->
 <!--						Featured-->
 <!--					</div>-->
@@ -46,47 +46,7 @@
 <!--						<li class="list-group-item">Vestibulum at eros</li>-->
 <!--					</ul>-->
 
-			</div>
-			<div class="col card" style="width: 18rem;">
-					<div class="card-header">
-						Featured
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Cras justo odio</li>
-						<li class="list-group-item">Dapibus ac facilisis in</li>
-						<li class="list-group-item">Vestibulum at eros</li>
-					</ul>
-			</div>
-			<div class="col card" style="width: 18rem;">
-				<div class="card-header">
-					Featured
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Cras justo odio</li>
-					<li class="list-group-item">Dapibus ac facilisis in</li>
-					<li class="list-group-item">Vestibulum at eros</li>
-				</ul>
-			</div>
-			<div class="col card" style="width: 18rem;">
-				<div class="card-header">
-					Featured
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Cras justo odio</li>
-					<li class="list-group-item">Dapibus ac facilisis in</li>
-					<li class="list-group-item">Vestibulum at eros</li>
-				</ul>
-			</div>
-			<div class="col card" style="width: 18rem;">
-				<div class="card-header">
-					Featured
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Cras justo odio</li>
-					<li class="list-group-item">Dapibus ac facilisis in</li>
-					<li class="list-group-item">Vestibulum at eros</li>
-				</ul>
-			</div>
+<!--			</div> repeat lines 38-49 4 more times-->
 		</div>
 
 <!--		map-->
@@ -132,7 +92,7 @@
 				getIcon();
 
 				//weather info for each card
-                for (var i = 0; i < 1; i++) {
+                for (var i = 0; i < 5; i++) {
                    temp = data.main.temp;
                    console.log(temp);
                    var description = data.weather[0].description;
@@ -141,7 +101,8 @@
                    var wind = data.wind.speed;
                    var pressure = data.main.pressure;
 
-                   restHTML = '<div class="card-header">';
+                   restHTML = '<div class="col card" style="width: 18rem;">';
+                   restHTML += '<div class="card-header">';
                    restHTML += '2020-04-16';
                    restHTML += '</div>';
                    restHTML += '<ul class="list-group list-group-flush"></ul>';
@@ -151,6 +112,7 @@
                    restHTML += '<li class="list-group-item">Humidity: ' + humidity +'</li>';
                    restHTML += '<li class="list-group-item">Wind: ' + wind +'</li>';
                    restHTML += '<li class="list-group-item">Pressure: ' + pressure +'</li>';
+                   restHTML += '</div>'
 
                     $('#april16').append(restHTML);
 
