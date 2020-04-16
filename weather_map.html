@@ -46,7 +46,7 @@
 <!--						<li class="list-group-item">Vestibulum at eros</li>-->
 <!--					</ul>-->
 
-<!--			</div> repeat lines 38-49 4 more times-->
+<!--			</div> repeat lines 38-49 4 more times to get all 5 cards-->
 		</div>
 
 <!--		map-->
@@ -67,7 +67,7 @@
 		(function() {
 		    var restHTML = '';
 
-			$.get("http://api.openweathermap.org/data/2.5/weather", {
+			$.get("http://api.openweathermap.org/data/2.5/forecast", {
                 "APPID": OWM_KEY,
                 "q": "Richardson, US",
                 "units": "imperial"
@@ -92,14 +92,17 @@
 				getIcon();
 
 				//weather info for each card
-                for (var i = 0; i < 5; i++) {
-                   temp = data.main.temp;
+                for (var i = 2; i < 40; i+=8) {
+                   temp = data.list[i].main.temp;
                    console.log(temp);
-                   var description = data.weather[0].description;
+                   var description = data.list[i].weather[0].description;
                    console.log(description);
-                   var humidity = data.main.humidity;
-                   var wind = data.wind.speed;
-                   var pressure = data.main.pressure;
+                   var humidity = data.list[i].main.humidity;
+                    console.log(humidity);
+                   var wind = data.list[i].wind.speed;
+                    console.log(wind);
+                   var pressure = data.list[i].main.pressure;
+                    console.log(pressure);
 
                    restHTML = '<div class="col card" style="width: 18rem;">';
                    restHTML += '<div class="card-header">';
