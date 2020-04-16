@@ -15,6 +15,7 @@
 		<div>Current City: Richardson, TX</div>
 	</nav>
 
+
 <!--	start of container-->
 	<div class="container">
 
@@ -34,14 +35,14 @@
 		</div>
 
 <!--		cards for each day's weather-->
-		<div class="row" id="april16">
+		<div class="row" id="forecast">
 <!--			<div  class="col card" style="width: 18rem;">-->
 <!--					<div class="card-header">-->
 <!--						Featured-->
 <!--					</div>-->
 <!--					<ul class="list-group list-group-flush">-->
 <!--						<li class="list-group-item">Cras justo odio</li>-->
-<!--			        	<img id="weather-icon" alt="weather icon">-->
+<!--			        	<img alt="weather icon" src="http://openweathermap.org/img/w/04d.png">-->
 <!--						<li class="list-group-item">Dapibus ac facilisis in</li>-->
 <!--						<li class="list-group-item">Vestibulum at eros</li>-->
 <!--					</ul>-->
@@ -74,26 +75,11 @@
             }).done(function(data) {
                 console.log(data);
 
-                $('#april16').empty();
+                $('#forecast').empty();
                 var temp = 0;
 
-                //icon
-                function getIcon() {
-					$.get("http://api.openweathermap.org/data/2.5/forecast", {
-						"APPID": OWM_KEY,
-						"q": "Richardson, US",
-						"units": "imperial"
-					}).done(function(forecastData) {
-						console.log(forecastData);
-						var icon = "http://openweathermap.org/img/w/" + forecastData.list[6].weather[0].icon + ".png";
-						console.log(icon);
-						$('#weather-icon').attr('src', icon);
-					});
-                }
-				getIcon();
-
 				//weather info for each card
-                for (var i = 2; i < 40; i+=8) {
+                for (var i = 0; i < 40; i+=8) {
                    var date = data.list[i].dt_txt;
                    temp = data.list[i].main.temp;
                    console.log(temp);
@@ -106,20 +92,27 @@
                    var pressure = data.list[i].main.pressure;
                     console.log(pressure);
 
+                // <img alt="weather icon" src="http://openweathermap.org/img/w/01d.png">
+                    var weatherIcon = data.list[i].weather[0].icon;
+                    console.log(weatherIcon);
+                    var iconImage = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
+                    console.log(iconImage);
+                    // $('#weather-icon').attr('src', iconHTML);
+
                    restHTML = '<div class="col card" style="width: 18rem;">';
                    restHTML += '<div class="card-header">';
                    restHTML += date;
                    restHTML += '</div>';
                    restHTML += '<ul class="list-group list-group-flush"></ul>';
-                   restHTML += '<li class="list-group-item">' + temp +'°F<span><img id="weather-icon" alt="weather icon"></span></li>';
-                   // restHTML += '<span><img id="weather-icon" alt="weather icon"></span>';
+                   restHTML += '<li class="list-group-item">' + temp +'°F<span><img alt="weather icon" src=' + iconImage + '></span></li>';
+                   // restHTML += '<img alt="weather icon" src=' + iconImage + '>';
                    restHTML += '<li class="list-group-item">' + description + '</li>';
                    restHTML += '<li class="list-group-item">Humidity: ' + humidity +'</li>';
                    restHTML += '<li class="list-group-item">Wind: ' + wind +'</li>';
                    restHTML += '<li class="list-group-item">Pressure: ' + pressure +'</li>';
                    restHTML += '</div>'
 
-                    $('#april16').append(restHTML);
+                    $('#forecast').append(restHTML);
 
                 }
 
