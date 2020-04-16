@@ -114,9 +114,6 @@
             }).done(function(data) {
                 console.log(data);
 
-
-
-                //append temperature to today's card
                 $('#april16').empty();
                 var temp = 0;
 
@@ -134,9 +131,15 @@
                 }
 				getIcon();
 
+				//weather info for each card
                 for (var i = 0; i < 1; i++) {
                    temp = data.main.temp;
                    console.log(temp);
+                   var description = data.weather[0].description;
+                   console.log(description);
+                   var humidity = data.main.humidity;
+                   var wind = data.wind.speed;
+                   var pressure = data.main.pressure;
 
                    restHTML = '<div class="card-header">';
                    restHTML += '2020-04-16';
@@ -144,19 +147,18 @@
                    restHTML += '<ul class="list-group list-group-flush"></ul>';
                    restHTML += '<li class="list-group-item">' + temp +'°F<span><img id="weather-icon" alt="weather icon"></span></li>';
                    // restHTML += '<span><img id="weather-icon" alt="weather icon"></span>';
-                   restHTML += '<li class="list-group-item">Dapibus ac facilisis in</li>';
-                   restHTML += '<li class="list-group-item">Vestibulum at eros</li>';
+                   restHTML += '<li class="list-group-item">' + description + '</li>';
+                   restHTML += '<li class="list-group-item">Humidity: ' + humidity +'</li>';
+                   restHTML += '<li class="list-group-item">Wind: ' + wind +'</li>';
+                   restHTML += '<li class="list-group-item">Pressure: ' + pressure +'</li>';
 
                     $('#april16').append(restHTML);
 
                 }
 
-
-
 			}).fail(function(errors) {
 			    console.error(errors);
 			});
-
 
 
 		})();
