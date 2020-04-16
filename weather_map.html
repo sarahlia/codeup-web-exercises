@@ -10,7 +10,7 @@
 </head>
 <body>
 <!--	header-->
-	<nav class="navbar navbar-dark bg-primary">
+	<nav class="navbar navbar-dark text-white bg-primary">
 		<div>Weather App</div>
 		<div>Current City: Richardson, TX</div>
 	</nav>
@@ -33,14 +33,15 @@
 			</form>
 		</div>
 
-<!--		boxes for each day's weather-->
+<!--		cards for each day's weather-->
 		<div class="row">
-			<div id="april15" class="col card" style="width: 18rem;">
+			<div id="april16" class="col card" style="width: 18rem;">
 <!--					<div class="card-header">-->
 <!--						Featured-->
 <!--					</div>-->
 <!--					<ul class="list-group list-group-flush">-->
 <!--						<li class="list-group-item">Cras justo odio</li>-->
+<!--			        	<img id="weather-icon" alt="weather icon">-->
 <!--						<li class="list-group-item">Dapibus ac facilisis in</li>-->
 <!--						<li class="list-group-item">Vestibulum at eros</li>-->
 <!--					</ul>-->
@@ -113,34 +114,48 @@
             }).done(function(data) {
                 console.log(data);
 
-                $('#april15').empty();
+
+
+                //append temperature to today's card
+                $('#april16').empty();
                 var temp = 0;
-				for (var i = 0; i < 1; i++) {
+
+                //icon
+                function getIcon() {
+					$.get("http://api.openweathermap.org/data/2.5/forecast", {
+						"APPID": OWM_KEY,
+						"q": "Richardson, US",
+						"units": "imperial"
+					}).done(function(forecastData) {
+						console.log(forecastData);
+						var icon = "http://openweathermap.org/img/w/" + forecastData.list[6].weather[0].icon + ".png";
+						$('#weather-icon').attr('src', icon);
+					});
+                }
+				getIcon();
+
+                for (var i = 0; i < 1; i++) {
                    temp = data.main.temp;
                    console.log(temp);
 
                    restHTML = '<div class="card-header">';
-                   restHTML += '2020-04-15';
+                   restHTML += '2020-04-16';
                    restHTML += '</div>';
                    restHTML += '<ul class="list-group list-group-flush"></ul>';
-                   restHTML += '<li class="list-group-item">' + temp + '</li>';
+                   restHTML += '<li class="list-group-item">' + temp +'°F<span><img id="weather-icon" alt="weather icon"></span></li>';
+                   // restHTML += '<span><img id="weather-icon" alt="weather icon"></span>';
                    restHTML += '<li class="list-group-item">Dapibus ac facilisis in</li>';
                    restHTML += '<li class="list-group-item">Vestibulum at eros</li>';
 
-                    $('#april15').append(restHTML);
+                    $('#april16').append(restHTML);
 
                 }
+
 
 
 			}).fail(function(errors) {
 			    console.error(errors);
 			});
-
-
-
-
-
-
 
 
 
