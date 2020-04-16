@@ -86,6 +86,7 @@
 					}).done(function(forecastData) {
 						console.log(forecastData);
 						var icon = "http://openweathermap.org/img/w/" + forecastData.list[6].weather[0].icon + ".png";
+						console.log(icon);
 						$('#weather-icon').attr('src', icon);
 					});
                 }
@@ -93,6 +94,7 @@
 
 				//weather info for each card
                 for (var i = 2; i < 40; i+=8) {
+                   var date = data.list[i].dt_txt;
                    temp = data.list[i].main.temp;
                    console.log(temp);
                    var description = data.list[i].weather[0].description;
@@ -106,7 +108,7 @@
 
                    restHTML = '<div class="col card" style="width: 18rem;">';
                    restHTML += '<div class="card-header">';
-                   restHTML += '2020-04-16';
+                   restHTML += date;
                    restHTML += '</div>';
                    restHTML += '<ul class="list-group list-group-flush"></ul>';
                    restHTML += '<li class="list-group-item">' + temp +'°F<span><img id="weather-icon" alt="weather icon"></span></li>';
