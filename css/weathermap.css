@@ -13,6 +13,7 @@
 
 #place {
     width: 80px;
+    display: none
 }
 
 #geocoder {
@@ -24,7 +25,20 @@
     top: 10px;
 }
 
-/*.mapboxgl-ctrl-geocoder {*/
-/*    min-width: 100%;*/
+.find-button {
+    display: none
+}
+
+
+/*.mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-search {*/
+/*    visibility: hidden;*/
 /*}*/
+
+.mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-loading {
+    visibility: hidden;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+    visibility: hidden;
+}
 
