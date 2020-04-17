@@ -61,6 +61,16 @@
             draggable: true,
         });
 
+        //geocoder -- form to input location
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
+
+        // $('#geocoder').append(geocoder.onAdd(map));
+        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+
         //marker
         var marker = new mapboxgl.Marker({
             draggable: true
@@ -91,19 +101,12 @@
                     for (var i = 0; i < 40; i+=8) {
                         var date = data.list[i].dt_txt;
                         var temp = data.list[i].main.temp;
-                        console.log(temp);
                         var description = data.list[i].weather[0].description;
-                        console.log(description);
                         var humidity = data.list[i].main.humidity;
-                        console.log(humidity);
                         var wind = data.list[i].wind.speed;
-                        console.log(wind);
                         var pressure = data.list[i].main.pressure;
-                        console.log(pressure);
                         var weatherIcon = data.list[i].weather[0].icon;
-                        console.log(weatherIcon);
                         var iconImage = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
-                        console.log(iconImage);
 
                         restHTML = '<div class="col card" style="width: 18rem;">';
                         restHTML += '<div class="card-header">';

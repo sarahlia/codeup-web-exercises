@@ -11,6 +11,7 @@
 	<link rel ="stylesheet" href="css/weathermap.css">
 </head>
 <body>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
 <!--	header-->
 	<nav class="navbar navbar-dark text-white bg-primary">
 		<div>Weather App</div>
@@ -27,9 +28,9 @@
 					<label for="place" class="sr-only">Place</label>
 					<input type="text" readonly class="form-control-plaintext" id="place" value="Place">
 				</div>
-				<div class="form-group mx-sm-3 mb-2">
-					<label for="city" class="sr-only">City</label>
-					<input type="text" class="form-control" id="city" placeholder="Dallas, TX">
+				<div class="form-group mx-sm-3 mb-2" id="geocoder">
+<!--					<label for="city" class="sr-only">City</label>-->
+<!--					<input type="text" class="form-control" id="city" placeholder="Dallas, TX">-->
 				</div>
 				<button type="submit" class="btn btn-primary mb-2">Find</button>
 			</form>
