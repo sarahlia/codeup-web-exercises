@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Weather Map Project</title>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css' rel='stylesheet' />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel ="stylesheet" href="scratch-weathermap.css">
+</head>
+<body>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<!--	header-->
+<nav class="navbar navbar-dark text-white bg-primary">
+	<div>Weather App</div>
+	<div>Current City: Richardson, TX</div>
+</nav>
+
+<!--	start of container-->
+<div class="container">
+
+	<!--		form to type in Place-->
+	<div class="row">
+		<form class="form-inline mt-4 mb-4">
+			<div class="form-group mb-2">
+				<label for="place" class="sr-only">Place</label>
+				<input type="text" readonly class="form-control-plaintext" id="place" value="Place">
+			</div>
+			<div class="form-group mx-sm-3 mb-2" id="geocoder">
+				<!--					<label for="city" class="sr-only">City</label>-->
+				<!--					<input type="text" class="form-control" id="city" placeholder="Dallas, TX">-->
+			</div>
+			<button type="submit" class="btn btn-primary mb-2 find-button">Find</button>
+		</form>
+	</div>
+
+	<!--		cards for each day's weather-->
+	<div class="row" id="forecast">
+		<!--			<div  class="col card" style="width: 18rem;">-->
+		<!--					<div class="card-header">-->
+		<!--						Featured-->
+		<!--					</div>-->
+		<!--					<ul class="list-group list-group-flush">-->
+		<!--						<li class="list-group-item">Cras justo odio</li>-->
+		<!--			        	<img alt="weather icon" src="http://openweathermap.org/img/w/04d.png">-->
+		<!--						<li class="list-group-item">Dapibus ac facilisis in</li>-->
+		<!--						<li class="list-group-item">Vestibulum at eros</li>-->
+		<!--					</ul>-->
+
+		<!--			</div> repeat lines 38-49 4 more times to get all 5 cards-->
+	</div>
+
+	<!--		map-->
+	<div class="row">
+		<div class='col-12 mt-3' id='map' style='width: 400px; height: 300px;'></div>
+		<pre id="coordinates"></pre>
+	</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="scratch-main-weather-project.js"></script>
+
+</body>
+</html>
