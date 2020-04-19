@@ -7,49 +7,47 @@
             "APPID": OWM_KEY,
             "q": "Richardson, US",
             "units": "imperial"
-        }).done(function(data) {
-            console.log(data);
-            $('#forecast').empty();
-            currentCityForecastHTML();
-            //weather cards/5-day forecast for current city
-            function currentCityForecastHTML(city) {
-                for (var i = 0; i < 40; i+=8) {
-                    var date = data.list[i].dt_txt;
-                    var temp = data.list[i].main.temp;
-                    console.log(temp);
-                    var description = data.list[i].weather[0].description;
-                    console.log(description);
-                    var humidity = data.list[i].main.humidity;
-                    console.log(humidity);
-                    var wind = data.list[i].wind.speed;
-                    console.log(wind);
-                    var pressure = data.list[i].main.pressure;
-                    console.log(pressure);
-                    var weatherIcon = data.list[i].weather[0].icon;
-                    console.log(weatherIcon);
-                    var iconImage = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
-                    console.log(iconImage);
-
-                    restHTML = '<div class="col card" style="width: 18rem;">';
-                    restHTML += '<div class="card-header">';
-                    restHTML += date;
-                    restHTML += '</div>';
-                    restHTML += '<ul class="list-group list-group-flush"></ul>';
-                    restHTML += '<li class="list-group-item">' + temp +'°F<span><img alt="weather icon" src=' + iconImage + '></span></li>';
-                    // restHTML += '<img alt="weather icon" src=' + iconImage + '>';
-                    restHTML += '<li class="list-group-item">' + description + '</li>';
-                    restHTML += '<li class="list-group-item">Humidity: ' + humidity +'</li>';
-                    restHTML += '<li class="list-group-item">Wind: ' + wind +'</li>';
-                    restHTML += '<li class="list-group-item">Pressure: ' + pressure +'</li>';
-                    restHTML += '</div>'
-
-                    $('#forecast').append(restHTML);
-                }
-            }
-
-        }).fail(function(errors) {
+        }).done(updateWeather)
+        .fail(function(errors) {
             console.error(errors);
         });
+
+        //generate weather cards/5-day forecast
+        function updateWeather(data) {
+            $('#forecast').empty();
+            for (var i = 0; i < 40; i+=8) {
+                var date = data.list[i].dt_txt;
+                var temp = data.list[i].main.temp;
+                console.log(temp);
+                var description = data.list[i].weather[0].description;
+                console.log(description);
+                var humidity = data.list[i].main.humidity;
+                console.log(humidity);
+                var wind = data.list[i].wind.speed;
+                console.log(wind);
+                var pressure = data.list[i].main.pressure;
+                console.log(pressure);
+                var weatherIcon = data.list[i].weather[0].icon;
+                console.log(weatherIcon);
+                var iconImage = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
+                console.log(iconImage);
+
+                restHTML = '<div class="col card" style="width: 18rem;">';
+                restHTML += '<div class="card-header">';
+                restHTML += date;
+                restHTML += '</div>';
+                restHTML += '<ul class="list-group list-group-flush"></ul>';
+                restHTML += '<li class="list-group-item">' + temp +'°F<span><img alt="weather icon" src=' + iconImage + '></span></li>';
+                // restHTML += '<img alt="weather icon" src=' + iconImage + '>';
+                restHTML += '<li class="list-group-item">' + description + '</li>';
+                restHTML += '<li class="list-group-item">Humidity: ' + humidity +'</li>';
+                restHTML += '<li class="list-group-item">Wind: ' + wind +'</li>';
+                restHTML += '<li class="list-group-item">Pressure: ' + pressure +'</li>';
+                restHTML += '</div>'
+
+                $('#forecast').append(restHTML);
+            }
+        }
 
         //Mapbox API -- map
         mapboxgl.accessToken = mapboxToken2
@@ -86,33 +84,8 @@
                 "lat": Lat,
                 "lon": Long,
                 "units": "imperial"
-            }).done(function(data) {
-                $('#forecast').empty();
-                for (var i = 0; i < 40; i+=8) {
-                    var date = data.list[i].dt_txt;
-                    var temp = data.list[i].main.temp;
-                    var description = data.list[i].weather[0].description;
-                    var humidity = data.list[i].main.humidity;
-                    var wind = data.list[i].wind.speed;
-                    var pressure = data.list[i].main.pressure;
-                    var weatherIcon = data.list[i].weather[0].icon;
-                    var iconImage = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
-
-                    restHTML = '<div class="col card" style="width: 18rem;">';
-                    restHTML += '<div class="card-header">';
-                    restHTML += date;
-                    restHTML += '</div>';
-                    restHTML += '<ul class="list-group list-group-flush"></ul>';
-                    restHTML += '<li class="list-group-item">' + temp +'°F<span><img alt="weather icon" src=' + iconImage + '></span></li>';
-                    restHTML += '<li class="list-group-item">' + description + '</li>';
-                    restHTML += '<li class="list-group-item">Humidity: ' + humidity +'</li>';
-                    restHTML += '<li class="list-group-item">Wind: ' + wind +'</li>';
-                    restHTML += '<li class="list-group-item">Pressure: ' + pressure +'</li>';
-                    restHTML += '</div>'
-
-                    $('#forecast').append(restHTML);
-                }
-            }).fail(function(errors) {
+            }).done(updateWeather)
+            .fail(function(errors) {
                 console.error(errors);
             });
         }
@@ -131,7 +104,6 @@
 
         var searchBox = $('.mapboxgl-ctrl-geocoder--input');
         // console.log(searchBox);
-        // searchBox.css('background-color', 'yellow');
 
     // update the weather cards when a new location is entered
     searchBox.keyup(function () {
@@ -142,47 +114,8 @@
                 "APPID": OWM_KEY,
                 "q": typedInput,
                 "units": "imperial"
-            }).done(function(data) {
-                console.log(data);
-                $('#forecast').empty();
-                currentCityForecastHTML();
-                //weather cards/5-day forecast for current city
-                function currentCityForecastHTML(city) {
-                    for (var i = 0; i < 40; i+=8) {
-                        var date = data.list[i].dt_txt;
-                        var temp = data.list[i].main.temp;
-                        console.log(temp);
-                        var description = data.list[i].weather[0].description;
-                        console.log(description);
-                        var humidity = data.list[i].main.humidity;
-                        console.log(humidity);
-                        var wind = data.list[i].wind.speed;
-                        console.log(wind);
-                        var pressure = data.list[i].main.pressure;
-                        console.log(pressure);
-                        var weatherIcon = data.list[i].weather[0].icon;
-                        console.log(weatherIcon);
-                        var iconImage = 'http://openweathermap.org/img/w/' + weatherIcon + '.png';
-                        console.log(iconImage);
-
-                        restHTML = '<div class="col card" style="width: 18rem;">';
-                        restHTML += '<div class="card-header">';
-                        restHTML += date;
-                        restHTML += '</div>';
-                        restHTML += '<ul class="list-group list-group-flush"></ul>';
-                        restHTML += '<li class="list-group-item">' + temp +'°F<span><img alt="weather icon" src=' + iconImage + '></span></li>';
-                        // restHTML += '<img alt="weather icon" src=' + iconImage + '>';
-                        restHTML += '<li class="list-group-item">' + description + '</li>';
-                        restHTML += '<li class="list-group-item">Humidity: ' + humidity +'</li>';
-                        restHTML += '<li class="list-group-item">Wind: ' + wind +'</li>';
-                        restHTML += '<li class="list-group-item">Pressure: ' + pressure +'</li>';
-                        restHTML += '</div>'
-
-                        $('#forecast').append(restHTML);
-                    }
-                }
-
-            }).fail(function(errors) {
+            }).done(updateWeather)
+            .fail(function(errors) {
                 console.error(errors);
             });
         });
