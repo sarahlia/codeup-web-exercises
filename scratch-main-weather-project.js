@@ -2,15 +2,15 @@
 (function() {
     $(document).ready(function() {
         var restHTML = '';
-        //Ajax request to OpenWeather for current city
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
-            "APPID": OWM_KEY,
-            "q": "Richardson, US",
-            "units": "imperial"
-        }).done(updateWeather)
-        .fail(function(errors) {
-            console.error(errors);
-        });
+        //Ajax request to OpenWeather
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                "APPID": OWM_KEY,
+                "q": "Richardson, US",
+                "units": "imperial"
+            }).done(updateWeather)
+            .fail(function(errors) {
+                console.error(errors);
+            });
 
         //generate weather cards/5-day forecast
         function updateWeather(data) {
@@ -59,7 +59,7 @@
             draggable: true,
         });
 
-        //marker
+        //initial marker
         var marker = new mapboxgl.Marker({
             draggable: true
         })
@@ -78,7 +78,7 @@
             coordinates.html('Longitude: ' + lngLat.lng + '<br>Latitude: ' + lngLat.lat);
             console.log(Long);
             console.log(Lat);
-            // feed coordinates from new marker/city to generate new weather cards/5-day forecast:
+            // feed coordinates from new marker to generate new weather cards:
             $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 "APPID": OWM_KEY,
                 "lat": Lat,
@@ -89,7 +89,7 @@
                 console.error(errors);
             });
         }
-        //add event handler at the end of marker drag -- get coordinates, then feed those coordinates to generate new cards
+        //add event handler at the end of marker drag -- execute function onDragEnd
         marker.on('dragend', onDragEnd);
 
         //geocoder -- form to input location
@@ -97,20 +97,18 @@
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl
         });
-        // once a location is typed, place the new location on the map
-        var newResult = document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
-        console.log(newResult);
+        //append the input form under the id 'geocoder' in the html
+        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
 
         var searchBox = $('.mapboxgl-ctrl-geocoder--input');
         // console.log(searchBox);
 
-    // update the weather cards when a new location is entered
-    searchBox.keyup(function () {
-        // console.log(searchBox[0].value);
-        var typedInput = searchBox[0].value;
-        console.log(typedInput);
-        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        // update the weather cards when a new location is entered
+        searchBox.keyup(function () {
+            var typedInput = searchBox[0].value;
+            console.log(typedInput);
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 "APPID": OWM_KEY,
                 "q": typedInput,
                 "units": "imperial"
@@ -118,6 +116,11 @@
             .fail(function(errors) {
                 console.error(errors);
             });
+
+            if (typedInput !== true) {
+                marker.remove();
+                coordinates.css('visibility', 'hidden');
+            }
         });
 
 

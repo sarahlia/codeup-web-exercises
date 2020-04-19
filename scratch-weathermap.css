@@ -11,33 +11,18 @@
     visibility: hidden;
 }
 
-#place {
-    width: 80px;
-    display: none
-}
-
 #geocoder {
-    /*position: absolute;*/
     z-index: 1;
     left: 50%;
     margin-left: -25%;
     top: 10px;
 }
 
-.find-button {
+.mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-loading {
     display: none
 }
 
-
-/*.mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-search {*/
-/*    visibility: hidden;*/
-/*}*/
-
-.mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-loading {
-    visibility: hidden;
-}
-
 .mapboxgl-ctrl-geocoder--button {
-    visibility: hidden;
+    visibility: hidden
 }
 
