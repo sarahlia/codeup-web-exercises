@@ -117,7 +117,7 @@
                     console.error(errors);
                 });
 
-            if (typedInput !== true) {
+            if (typedInput !== "") {
                 marker.remove();
                 coordinates.css('visibility', 'hidden');
             }
