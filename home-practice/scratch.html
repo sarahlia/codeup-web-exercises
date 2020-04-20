@@ -32,7 +32,9 @@
 			<input type="submit">
 		</div>
 	</form>
+<!--	________________________________________________________________-->
 
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<script src="scratch.js"></script>
 	<script>
 		"use strict";
@@ -82,10 +84,32 @@
             console.log(usernameInput.value);
 
             // usernameInput.addEventListener('keyup', alert(usernameInput.value));
-			$('#username').keyup(function () {
-			   console.log($('#username.value'));
-			});
+			var username = $('#username');
+            console.log(username);
 
+            username.keyup(function () {
+                var typedText = username[0].value;
+                console.log(typedText)
+            });
+		// ______________________________________________________________________
+            // Get the body element (notice we need to use index 0 of the array!)
+            var bodyElement = document.getElementsByTagName('body')[0];
+            // console.log(bodyElement);
+
+
+            // Change the body font color
+            bodyElement.style.color = 'blue'; // Blue
+			//
+
+			bodyElement.style.backgroundColor = "yellow";
+
+            // bodyElement.style['background-color'] = "yellow";
+            // // We had to use [] syntax since the property name has a dash
+			//
+            // bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+            // // Replace dashes with camelCase to use standard . syntax
+
+			bodyElement.style['font-family'] = "Helvetica, Verdana, Sans-Serif";
 
 
 
