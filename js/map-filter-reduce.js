@@ -57,24 +57,42 @@ let averageYearsExp = totalYearsExp/(users.length);
 console.log(averageYearsExp);
 
 //Exercise 5: use .reduce to get the longest email from the list of users
-let longestEmail = userEmails.reduce ( (acc, unit) => {
-    return  acc.length > unit.length ? acc : unit;
-    // if (acc.length > unit.length) {
-    //     return acc;
-    // } else {
-    //     return unit;
-    // }
+let longestEmail = userEmails.reduce ( (longest, user) => {
+    // console.log(longest);
+    // console.log(longest.length);
+    // console.log(user);
+    // console.log(user.length);
+    if (longest.length > user.length) {
+        return longest;
+    } else {
+        return user;
+    }
+    // return  longest.length > user.length ? longest : user;
+
     // return Math.max(unit.length);
 }, "");
 console.log(longestEmail);
 
 //Exercise 6: use .reduce to get the list of user's names in a single string:
-let userNames = users.map( person => person.name ) ;
-console.log(userNames);
+// let userNames = users.map( person => person.name ) ;
+// console.log(userNames);
 
-let namesString = userNames.reduce ( (acc, unit) => {
-    return acc + unit;
+let namesString = users.reduce( (names, user) => {
+    if(names !== '') {
+        names = names + ', '
+    }
+    return names + user.name;
 }, "");
 console.log(namesString);
 
 
+//BONUS: use .reduce to get the unique list of languages from the list of users
+const allLanguages = users.reduce( (languages, user) => {
+    user.languages.forEach( (language) => {
+        if(!languages.includes(language)) {
+            languages.push(language);
+        }
+    });
+    return languages;
+}, []);
+console.log(allLanguages);
