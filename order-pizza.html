@@ -58,13 +58,13 @@
 
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
 				<li class="nav-item">
-					<a class="nav-link active" href="#"><span class="badge badge-dark">1</span>Size and crust</a>
+					<a class="nav-link active" id="link-size" data-toggle="tab" href="#size-n-crust"><span class="badge badge-dark">1</span>Size and crust</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#"><span class="badge badge-dark">2</span>Cheese and sauce</a>
+					<a class="nav-link" id="link-cheese" data-toggle="tab" href="#cheese-n-sauce"><span class="badge badge-dark">2</span>Cheese and sauce</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#"><span class="badge badge-dark">3</span>Toppings</a>
+					<a class="nav-link" id="link-toppings" data-toggle="tab" href="#toppings"><span class="badge badge-dark">3</span>Toppings</a>
 				</li>
 			</ul>
 
@@ -91,7 +91,9 @@
 
 <!--			</div>-->
 
-
+<!--			tab panels with id that match the href from above section-->
+	<div class="tab-content">
+		<div class="tab-pane active" id="size-n-crust" role="tabpanel" aria-labelledby="link-size">
 			<div class="card">
 				<div class="card-header text-white bg-primary mb-3">
 					Choose size and crust
@@ -135,6 +137,8 @@
 			<br>
 			<br>
 			<br>
+		</div>
+	</div>
 
 			<div class="card">
 				<div class="card-header text-white bg-primary mb-3">
@@ -195,7 +199,6 @@
 			<br>
 			<br>
 			<br>
-
 			<div class="card">
 				<div class="card-header text-white bg-primary mb-3">
 					Choose Toppings
