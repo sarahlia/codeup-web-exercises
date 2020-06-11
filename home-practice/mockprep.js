@@ -20,4 +20,24 @@
         return joinArr;
     }
 
-    reverseString("Hello World");
+    console.log(reverseString("Hello World"));
+
+// Write a function that console logs 0 to 35 when called
+    function countToThirtyFive() {
+        for(let i = 0; i <= 35; i++) {
+            console.log(i);
+        }
+    }
+
+    countToThirtyFive();
+
+
+// Write a function that takes in a parameter and counts from 0 up to that parameter
+    function countTo(param) {
+        for(let i = 0; i <= param; i++) {
+            console.log(i);
+        }
+    }
+
+    countTo(69);
+
